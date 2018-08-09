@@ -84,6 +84,61 @@
             <button class="close-house btn btn-danger">x</button>
         </form>
     </div>
+    <div class="container-fluid post-job">
+            <div class="row">
+                <div class="col-sm-12 title-pos">
+                    <h1>Post a job position:</h1>
+                </div>
+            </div>
+            <form onsubmit="app.controllers.jobController.addJob(event)">
+                <div class="form-row">
+                    <div class="form-group col-sm-8">
+                        <label for="jobTitle-input">Job title</label>
+                        <input type="text" name="jobTitle" placeholder="Doctor" required>
+                    </div>
+                    <div class="form-group col-sm-4">
+                        <label for="pay-input">Pay/Salary</label>
+                        <input type="text" name="pay" placeholder="30 per hour, 60,000 per year" required>
+                    </div>
+                    <div class="form-group col-sm-12">
+                        <label for="company-input">Company</label>
+                        <input type="text" name="company" placeholder="123 Abc St" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-sm-4">
+                        <label for="city-input">City</label>
+                        <input type="text" name="city" required>
+                    </div>
+                    <div class="form-group col-sm-4">
+                        <label for="state-input">State</label>
+                        <input type="text" name="state" required>
+                    </div>
+                    <div class="form-group col-sm-4">
+                        <label for="zip-input">Zip</label>
+                        <input type="text" name="zip" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                   <div class="form-group col-sm-5 offset-sm-1">
+                       <label for="phone-input">Phone</label>
+                       <input type="text" name="phone" placeholder="208.222.2222" required>
+                   </div>
+                   <div class="form-group col-sm-5">
+                       <label for="email-input">Email</label>
+                       <input type="email" name="email" placeholder="me@example.com" required>
+                   </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-sm-12">
+                        <label for="image">Image URL</label>
+                        <input type="text" name="image" placeholder="URL" required>
+                    </div>
+                </div>
+                <button class="btn btn-secondary" type="submit">Post Job</button>
+                <button class="close-job btn btn-danger">x</button>
+            </form>
+        </div>
     <div class="container">
         <div class="row houses"></div>
     </div>
