@@ -1,7 +1,29 @@
+body h1 {
+    width: 99%;
+    text-align: center;
+}
+.house-button {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+.job-button {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+}
 input {
     width: 100%;
 }
 .title-pos{
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
+}
+.house-img {
+    max-height: 300px;
+    width: auto;
+    overflow: scroll;
+}
+.list-house {
+    display: none;
 }
