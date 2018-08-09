@@ -1,0 +1,7 @@
+input {
+    width: 100%;
+}
+.title-pos{
+    display: flex;
+    justify-content: center;
+}
