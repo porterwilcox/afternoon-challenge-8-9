@@ -3,6 +3,7 @@ export default class Job{
         company,
         city,
         state,
+        zip,
         jobTitle,
         pay,
         jobDescription,
@@ -13,6 +14,7 @@ export default class Job{
         this.company = company;
         this.city = city;
         this.state = state;
+        this.zip = zip;
         this.jobTitle = jobTitle;
         this.pay = pay;
         this.jobDescription = jobDescription;

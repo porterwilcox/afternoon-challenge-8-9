@@ -2,6 +2,17 @@ body h1 {
     width: 99%;
     text-align: center;
 }
+h2 {
+    text-align: center;
+    padding: 1em 0;
+    display: none;
+}
+.house-list-title {
+    width: 50%;
+}
+.job-list-title {
+    width: 33%
+}
 .house-button {
     width: 100%;
     display: flex;
@@ -12,14 +23,14 @@ body h1 {
     display: flex;
     justify-content: flex-start;
 }
-input {
+input, textarea {
     width: 100%;
 }
 .title-pos{
     display: flex;
     justify-content: space-around;
 }
-.house-img {
+img {
     max-height: 300px;
     width: auto;
     overflow: scroll;

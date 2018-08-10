@@ -20,23 +20,25 @@ function drawJobs(){
         template += `
         <div class="col-sm-4">
         <div class="card">
-            <img class="card-img-top house-img" src="${job.image}" alt="your house">
+            <img class="card-img-top" src="${job.image}" alt="your house">
             <div class="card-body">
-                <h4 class="card-title">$${job.jobTitle}</h4>
+                <h4 class="card-title">${job.jobTitle}</h4>
                 <h5 class="card-subtitle">$${job.pay}</h5>
                 <h5 class="card-subtitle">${job.company}</h5>
-                <h6 class="card-subtitle">${job.city}, ${job.state}</h6>
+                <h6 class="card-subtitle">${job.city}, ${job.state} ${job.zip}</h6>
                 <ul class="list-group">
-                    <li class="list-group-item">Floors: ${job.phone}</li>
-                    <li class="list-group-item">Rooms: ${job.email}</li>
+                    <li class="list-group-item">Contact:</li>
+                    <li class="list-group-item">${job.phone}</li>
+                    <li class="list-group-item">${job.email}</li>
                 </ul>
-                <p>Built in ${job.jobDescription}</p>
+                <p>${job.jobDescription}</p>
             </div>
         </div>
     </div>
         `
     }
     document.querySelector(".jobs").innerHTML = template;
+    document.querySelector(".job-list-title").style.display = "block";
 }
 
 export default class HouseController {
@@ -47,6 +49,6 @@ export default class HouseController {
         jobService.addJob(jobData);
         jobData.reset();
         drawJobs();
-        closeJob;
+        closeJob();
     }
 }

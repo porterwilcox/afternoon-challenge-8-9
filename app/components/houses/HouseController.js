@@ -19,7 +19,7 @@ function drawHouses() {
         template += `        
         <div class="col-sm-6">
             <div class="card">
-                <img class="card-img-top house-img" src="${house.image}" alt="your house">
+                <img class="card-img-top" src="${house.image}" alt="your house">
                 <div class="card-body">
                     <h4 class="card-title">$${house.price}</h4>
                     <h5 class="card-subtitle">${house.address}</h5>
@@ -36,12 +36,14 @@ function drawHouses() {
         </div>    
         `
     }
-    document.querySelector('.houses').innerHTML = template;
+    document.querySelector(".houses").innerHTML = template;
+    document.querySelector(".house-list-title").style.display = "block";
 }
 
 export default class HouseController {
     constructor() {
-        drawHouses();
+        // if could save houses then would need to do this
+        // drawHouses();
     }
     addHouse(e) {
         e.preventDefault();

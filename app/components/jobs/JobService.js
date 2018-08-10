@@ -10,6 +10,7 @@ export default class JobService {
             jobData.company.value,
             jobData.city.value,
             jobData.state.value,
+            jobData.zip.value,
             jobData.jobTitle.value,
             jobData.pay.value,
             jobData.jobDescription.value,
