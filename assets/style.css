@@ -4,8 +4,7 @@ body h1 {
 }
 h2 {
     text-align: center;
-    padding: 1em 0;
-    display: none;
+    margin: 1em 0;
 }
 .house-list-title {
     width: 50%;
