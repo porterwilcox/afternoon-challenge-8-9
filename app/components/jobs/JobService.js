@@ -38,4 +38,10 @@ export default class JobService {
                 this.getJobs(callback)
             })
     }
+    bidMore(id, newRate, callback) {
+        jobsAPI.put(id, newRate)
+            .then(res => {
+                this.getJobs(callback)
+            })
+    }
 }

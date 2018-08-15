@@ -10,6 +10,13 @@ export default class HouseController {
     deleteJob(id) {
         jobService.deleteJob(id, drawJobs)
     }
+    bidMore(id, newRate) {
+        newRate += 2
+        let bid = {
+            rate: newRate
+        }
+        jobService.bidMore(id, bid, drawJobs)
+    }
 }
 
 
@@ -27,6 +34,9 @@ function drawJobs(jobs) {
                     <h5 class="card-subtitle">${job.hours} hours/week</h5>
                     <p>${job.description}</p>
                 </div>
+                <button class="btn-primary" onclick="app.controllers.jobController.bidMore('${job._id}', ${job.rate})">
+                    Ask for better pay
+                </button>
                 <button class="btn-danger" onclick="app.controllers.jobController.deleteJob('${job._id}')">Delete</button>
             </div>
         </div>
