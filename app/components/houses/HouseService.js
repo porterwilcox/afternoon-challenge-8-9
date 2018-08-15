@@ -31,4 +31,16 @@ export default class HouseService {
                 this.getHouses(callback)
             })
     }
+    deleteHouse(id, callback) {
+        housesAPI.delete(id)
+            .then(res => {
+                this.getHouses(callback)
+            })
+    }
+    bidHouse(id, newPrice, callback){
+        housesAPI.put(id, newPrice)
+            .then(res => {
+                this.getHouses(callback)
+            })
+    }
 }

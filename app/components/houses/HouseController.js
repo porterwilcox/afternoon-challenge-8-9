@@ -19,6 +19,7 @@ function drawHouses(houses) {
                 <img class="card-img-top" src="${house.imgUrl}" alt="your house">
                 <div class="card-body">
                     <h4 class="card-title">$${house.price}</h4>
+                    <button class="btn-primary" onclick="app.controllers.houseController.bidHouse('${house._id}', ${house.price})">Bid higher</button>
                     <ul class="list-group">
                         <li class="list-group-item">Floors: ${house.levels}</li>
                         <li class="list-group-item">Rooms: ${house.bedrooms}</li>
@@ -26,6 +27,7 @@ function drawHouses(houses) {
                     </ul>
                     <p>${house.description} Built in ${house.year}</p>
                 </div>
+                <button class="btn-success" onclick="app.controllers.houseController.deleteHouse('${house._id}')">Purchase</button>
             </div>
         </div>    
         `
@@ -44,5 +46,15 @@ export default class HouseController {
     constructor() {
         houseService.getHouses(drawHouses)
         document.getElementById("house-submit").addEventListener("submit", addHouse)
+    }
+    deleteHouse(id){
+        houseService.deleteHouse(id, drawHouses)
+    }
+    bidHouse(id, newPrice){
+        newPrice += 1000
+        let bid = {
+            price: newPrice
+        }
+        houseService.bidHouse(id, bid, drawHouses)
     }
 }

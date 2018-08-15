@@ -32,4 +32,10 @@ export default class JobService {
                 this.getJobs(callback)
             })
     }
+    deleteJob(id, callback) {
+        jobsAPI.delete(id)
+            .then(res => {
+                this.getJobs(callback)
+            })
+    }
 }
