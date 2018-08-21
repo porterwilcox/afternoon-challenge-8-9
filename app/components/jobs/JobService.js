@@ -1,7 +1,7 @@
 import Job from "../../models/Job.js";
 
 const jobsAPI = axios.create({
-    baseURL: `https://bcw-gregslist.herokuapp.com/api/jobs/`,
+    baseURL: `//localhost:3000/api/jobs`,
     timeout: 3000 //will throw error if no promise within 3 seconds
 })
 
@@ -13,7 +13,8 @@ export default class JobService {
     getJobs(callback) {
         jobsAPI.get()
             .then(res => {
-                let jobs = res.data.data.map(j => {
+                console.log(res)
+                let jobs = res.data.map(j => {
                     return new Job(j)
                 })
                 callback(jobs)

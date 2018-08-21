@@ -1,8 +1,8 @@
 import House from "../../models/House.js";
 
 const housesAPI = axios.create({
-    baseURL: `https://bcw-gregslist.herokuapp.com/api/houses/`,
-    timeout: 3000 // throw error if no promise returned in 3 seconds
+    baseURL: `//localhost:3000/api/house`,
+    timeout: 4000 // throw error if no promise returned in 3 seconds
 })
 
 export default class HouseService {
@@ -10,10 +10,13 @@ export default class HouseService {
     getHouses(callback) {
         housesAPI.get()
             .then(res => {
-                let houses = res.data.data.map(h => {
-                    return new House(h)
-                })
-                callback(houses)
+                console.log(res.data)
+                if (res.data.length) {
+                    let houses = res.data.map(h => {
+                        return new House(h)
+                    })
+                    callback(houses)
+                }
             })
     }
     addHouse(houseData, callback) {
