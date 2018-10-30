@@ -2,7 +2,7 @@ import House from "../../models/House.js";
 
 const housesAPI = axios.create({
     baseURL: `//localhost:3000/api/house`,
-    timeout: 4000 // throw error if no promise returned in 3 seconds
+    timeout: 3000 // throw error if no promise returned in 3 seconds
 })
 
 export default class HouseService {
@@ -37,6 +37,7 @@ export default class HouseService {
     deleteHouse(id, callback) {
         housesAPI.delete(id)
             .then(res => {
+                console.log(res)
                 this.getHouses(callback)
             })
     }

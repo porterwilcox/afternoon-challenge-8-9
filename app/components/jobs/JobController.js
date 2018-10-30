@@ -2,7 +2,7 @@ import JobService from "./JobService.js";
 
 let jobService = new JobService();
 
-export default class HouseController {
+export default class JobController {
     constructor() {
         jobService.getJobs(drawJobs)
         document.getElementById('job-submit').addEventListener("submit", addJob)
